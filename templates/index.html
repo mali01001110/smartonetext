@@ -43,9 +43,7 @@
             box-sizing: border-box;
         }
 
-        button,
-        .button {
-            display: inline-block;
+        button {
             background: #00ff66;
             color: #000;
             border: none;
@@ -53,13 +51,10 @@
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            text-decoration: none;
         }
 
-        button:hover,
-        .button:hover {
+        button:hover {
             background: #33ff85;
-            text-decoration: none;
         }
 
         a {
@@ -93,13 +88,7 @@
             <button type="submit">Send</button>
         </form>
 
-        <p class="link">
-            <a class="button" href="{% url 'index' %}">Open SmartOneText</a>
-        </p>
-
-        <p class="link">
-            <a href="{% url 'feed' %}">View all messages</a>
-        </p>
+        <p class="link"><a href="{% url 'feed' %}">View all messages</a></p>
     </div>
 </body>
 </html>

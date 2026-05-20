@@ -6,7 +6,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "dev-only-key-change-in-production")
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = ["smartonetext.online", "www.smartonetext.online"]  # For production, set your domain(s), e.g. ["smartonetext.onrender.com"]
+ALLOWED_HOSTS = [
+    "smartonetext.online",
+    "www.smartonetext.online",
+    "localhost",
+    "127.0.0.1",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",

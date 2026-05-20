@@ -59,6 +59,24 @@
         .empty {
             color: #80ffc0;
         }
+
+        .delete-form {
+            margin-top: 10px;
+        }
+
+        .delete-btn {
+            background: #0b0b0b;
+            color: #ff5c5c;
+            border: 1px solid #ff5c5c;
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .delete-btn:hover {
+            background: #2a0000;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +93,13 @@
                         <strong>{{ m.username }}</strong> • {{ m.created_at|date:"Y-m-d H:i:s" }}
                     </div>
                     <div class="text">{{ m.message }}</div>
+
+                    {% if request.user.is_staff %}
+                        <form method="post" action="{% url 'delete_message' m.id %}" class="delete-form">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    {% endif %}
                 </div>
             {% endfor %}
         {% else %}

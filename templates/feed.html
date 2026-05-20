@@ -84,7 +84,11 @@
         <h1>{{ site_name }}</h1>
         <h2>Public Message Feed</h2>
 
-        <p><a href="{% url 'index' %}">Leave a new message</a></p>
+        <p>
+            <a href="{% url 'index' %}">Leave a new message</a>
+            •
+            <a href="/admin/login/?next=/feed/">Admin Login</a>
+        </p>
 
         {% if messages %}
             {% for m in messages %}
